@@ -1,0 +1,5 @@
+ {
+    "databaseName": "platformdb",
+    "dbname": "mongodb+srv://mongoadmin:mongoadmin@cluster0-t2z9n.gcp.mongodb.net/platformdb?retryWrites=true&w=majority",
+   "dbconnetionString": "DATABASE_CONNECTION"
+  }

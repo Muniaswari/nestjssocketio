@@ -1,0 +1,321 @@
+{
+    "form": {
+        "createdBy": "",
+        "definition": {
+            "formSchema": {
+                "title": "",
+                "type": "object",
+                "required": [
+                    "Id",
+                    "Name"
+                ],
+                "properties": {
+                    "Id": {
+                        "title": "Id",
+                        "unique": true
+                    },
+                    "Name": {
+                        "title": "Name"
+                    },
+                    "itemTable": {
+                        "display": "table",
+                        "type": "array",
+                        "items": {
+                            "required": [
+                                "column1",
+                                "column2"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "column1": {
+                                    "title": "column1"
+                                },
+                                "column2": {
+                                    "title": "column2"
+                                }
+                            }
+                        }
+                    },
+                    "Remarks": {
+                        "title": "Remarks",
+                        "type": "string"
+                    }
+                }
+            },
+            "uiSchema": {
+                "ui:field": "layout",
+                "ui:layout": [
+                    {
+                        "Id": {
+                            "md": 6
+                        },
+                        "Name": {
+                            "md": 6
+                        },
+                        "itemTable": {
+                            "md": 12
+                        },
+                        "Remarks": {
+                            "md": 6
+                        }
+                    }
+                ],
+                "Id": {
+                    "ui:field": "text",
+                    "ui:disabled": false,
+                    "ui:options": {
+                        "placeholder": "Enter Id"
+                    }
+                },
+                "Name": {
+                    "ui:field": "text",
+                    "ui:disabled": false,
+                    "ui:options": {
+                        "placeholder": "Enter Name",
+                        "className": "mb-3"
+                    }
+                },
+                "Remarks": {
+                    "ui:disabled": false,
+                    "ui:widget": "textarea",
+                    "ui:options": {
+                        "rows": 4,
+                        "placeholder": "Enter Remarks"
+                    }
+                },
+                "itemTable": {
+                    "ui:title": "Items",
+                    "items": {
+                        "column1": {
+                            "ui:style": {
+                                "width": "15%"
+                            },
+                            "ui:field": "text",
+                            "ui:options": {}
+                        },
+                        "column2": {
+                            "ui:style": {
+                                "width": "85%"
+                            },
+                            "ui:field": "text",
+                            "ui:options": {}
+                        }
+                    }
+                }
+            },
+            "rules": "[]",
+            "buttons": {
+                "submit": {
+                    "title": "Submit",
+                    "className": "btn btn-primary",
+                    "event": "submit",
+                    "cond": [
+                        {
+                            "rule": {
+                                "field": "isSubmitedStatus",
+                                "operator": "===",
+                                "value": "true"
+                            },
+                            "ifPart": {
+                                "title": "Unsubmit"
+                            },
+                            "elsePart": {
+                                "title": "Submit"
+                            }
+                        },
+                        {
+                            "rule": {
+                                "field": "_id",
+                                "operator": "===",
+                                "value": "null"
+                            },
+                            "ifPart": {
+                                "disabled": "true"
+                            },
+                            "elsePart": {
+                                "disabled": "false"
+                            }
+                        }
+                    ],
+                    "fieldNeedToUpdate": {
+                        "updateType": "all"
+                    }
+                },
+                "save": {
+                    "type": "submit",
+                    "title": "save",
+                    "className": "btn btn-success",
+                    "event": "save",
+                    "fieldNeedToUpdate": {
+                        "updateType": "all"
+                    },
+                    "cond": [
+                        {
+                            "rule": {
+                                "field": "_id",
+                                "operator": "===",
+                                "value": "null"
+                            },
+                            "ifPart": {
+                                "title": "Save"
+                            },
+                            "elsePart": {
+                                "title": "Update"
+                            }
+                        },
+                        {
+                            "rule": {
+                                "field": "isSubmitedStatus",
+                                "operator": "===",
+                                "value": "true"
+                            },
+                            "ifPart": {
+                                "disabled": true
+                            },
+                            "elsePart": {
+                                "disabled": false
+                            }
+                        }
+                    ]
+                },
+                "reset": {
+                    "title": "reset",
+                    "type": "reset",
+                    "className": "btn btn-warning",
+                    "event": "reset"
+                }
+            }
+        },
+        "type": "form",
+        "title": "New Form",
+        "description": "New Form",
+        "appId": "",
+        "userId": "",
+        "author": "",
+        "modified": []
+    },
+    "formlist": {
+        "createdBy": "",
+        "id": "",
+        "definition": {
+            "form": "inward",
+            "listConfig": {
+                "datapath": "",
+                "class": "table table-bordered",
+                "columns": [
+                    {
+                        "Header": "Id",
+                        "accessor": "Id",
+                        "width": 50
+                    },
+                    {
+                        "Header": "Name",
+                        "accessor": "Name",
+                        "width": 50
+                    }
+                ]
+            }
+        },
+        "type": "list",
+        "title": "Form List",
+        "description": "Form List",
+        "appId": "",
+        "userId": "",
+        "author": "",
+        "modified": []
+    },
+    "template": {
+        "createdBy": "",
+        "id": "",
+        "title": "Home Template",
+        "description": "",
+        "definition": {
+            "template": "<h3>Welcome</h3>"
+        },
+        "appId": "",
+        "type": "template",
+        "userId": "",
+        "author": "",
+        "modified": []
+    },
+    "widget": {
+        "isActive": true,
+        "createdBy": "",
+        "id": "",
+        "title": "Home Widget",
+        "description": "testtemplate",
+        "definition": {
+            "form": "",
+            "query": [],
+            "widgetConfig": "{}",
+            "type": "template",
+            "templateId": ""
+        },
+        "appId": "",
+        "type": "widget",
+        "userId": "",
+        "author": "",
+        "modified": []
+    },
+    "page": {
+        "isActive": true,
+        "createdBy": "",
+        "id": "",
+        "title": "Home Page",
+        "description": "",
+        "definition": {
+            "widgets": [],
+            "pageConfig": []
+        },
+        "appId": "",
+        "type": "page",
+        "userId": "",
+        "author": "",
+        "modified": []
+    },
+    "menu": {
+        "createdBy": "",
+        "id": "",
+        "definition": {
+            "menuConfig": {
+                "header": {
+                    "title": "Inventory",
+                    "url": "",
+                    "description": "Stock Details"
+                },
+                "body": [
+                    {
+                        "type": "label",
+                        "title": "Mainmenus"
+                    },
+                    {
+                        "icon": "Camera",
+                        "type": "link",
+                        "title": "Dashboard",
+                        "url": "../page/12a4fa22-fb00-45aa-8fd1-57bf4ead54da"
+                    },
+                    {
+                        "icon": "Book",
+                        "type": "group",
+                        "title": "Menu1",
+                        "children": [
+                            {
+                                "type": "link",
+                                "title": "SubMenu1",
+                                "url": "../list/inwardlist"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "role": "admin"
+        },
+        "type": "menu",
+        "title": "Menu",
+        "description": "Menu",
+        "appId": "",
+        "userId": "",
+        "author": "",
+        "modified": []
+    }
+}

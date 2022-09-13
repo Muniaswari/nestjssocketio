@@ -1,0 +1,2 @@
+https://attacomsian.com/blog/nodejs-encrypt-decrypt-data
+https://github.com/attacomsian/code-examples/tree/master/nodejs/crypto

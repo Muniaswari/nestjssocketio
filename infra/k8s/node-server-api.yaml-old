@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-server-api
+spec:
+  containers:
+    - name: node-server-api
+      image: node-server-api-img
+      imagePullPolicy: Never
